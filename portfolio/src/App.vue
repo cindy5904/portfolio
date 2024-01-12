@@ -1,85 +1,63 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+   
+    <header class="header">
+      <div class="nav">
+        <ul class="nav-home">
+          <img src="./assets/logo3.png" alt="logo cindy" width="80">
+          <li ><RouterLink to="/" id="color">Accueil</RouterLink></li>
+          <li>Personnages</li>
+          <li>Mes projets</li>
+          <li>bla</li>    
+        </ul>
+      </div>
+    </header>
+    <div id="app">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
+.header {
+  position: fixed;
+  height: 80px;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  background: linear-gradient(to bottom, #333, #626262);
+  z-index: 10;
+  display: flex;
+  align-items: center;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.nav {
+  margin-left: 30px;
 }
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
+ .nav-home {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    align-items: center;
+    list-style: none;
+    padding: auto;
+    margin: auto;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  .nav-home img {
+    margin-right: 10px;
+    width: 70px;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  .nav-home li {
+    padding: 20px;
+    color: white; 
+    font-weight: bold;
   }
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.router-link-active,
+.router-link-exact-active {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 </style>
