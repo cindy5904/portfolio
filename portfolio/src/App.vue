@@ -9,9 +9,10 @@ import { RouterLink, RouterView } from 'vue-router'
         <ul class="nav-home">
           <img src="./assets/logo3.png" alt="logo cindy" width="80">
           <li ><RouterLink to="/" id="color">Accueil</RouterLink></li>
-          <li>Personnages</li>
           <li>Mes projets</li>
-          <li>bla</li>    
+          <li>Jeux</li>
+          <li><RouterLink to="/cv" id="color">CV</RouterLink></li>
+          <li><RouterLink to="/lettre" id="color">Lettre Motivation</RouterLink></li>     
         </ul>
       </div>
     </header>
@@ -54,10 +55,20 @@ import { RouterLink, RouterView } from 'vue-router'
     font-weight: bold;
   }
 
-.router-link-active,
-.router-link-exact-active {
+.nav-home li a {
     color: white;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-home li a:hover {
+  color: burlywood;
+}
+
+.nav-home li a.router-link-active,
+.nav-home li a.router-link-exact-active {
+    font-weight: bold;
+    color: #b1bfee; 
 }
 </style>

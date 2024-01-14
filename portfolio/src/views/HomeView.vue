@@ -1,5 +1,6 @@
 <script setup>
-
+import SectionMilieu from '../components/Section_milieu.vue';
+import Card from '../components/Card.vue';
 </script>
 
 <template>
@@ -55,12 +56,16 @@
         </div>
       </div>
     </div>
-    
+    <SectionMilieu />
+    <Card/>
   </main>
 </template>
 <style scoped>
 img {
   position: absolute;
+}
+.bg {
+  height: 800px;
 }
 .content {
   position: relative;
@@ -187,7 +192,7 @@ p {
 }
 
 .vision {
-  width: 200px;
+  width: 180px;
   height: 180px;
   margin-left: -80px;
   margin-top: 20px;
