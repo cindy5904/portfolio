@@ -10,7 +10,13 @@ import { RouterLink, RouterView } from 'vue-router'
           <img src="./assets/logo3.png" alt="logo cindy" width="80">
           <li ><RouterLink to="/" id="color">Accueil</RouterLink></li>
           <li>Mes projets</li>
-          <li>Jeux</li>
+          <li class="dropdown">
+          <a id="color">Jeux</a>
+          <ul class="dropdown-menu">
+            <li><RouterLink to="/morpion" id="li_dropdown">Tic Tac Toe</RouterLink></li>
+            <li><RouterLink to="/justeprix" id="li_dropdown">Juste Prix</RouterLink></li>
+          </ul>
+        </li>
           <li><RouterLink to="/cv" id="color">CV</RouterLink></li>
           <li><RouterLink to="/lettre" id="color">Lettre Motivation</RouterLink></li>     
         </ul>
@@ -70,5 +76,33 @@ import { RouterLink, RouterView } from 'vue-router'
 .nav-home li a.router-link-exact-active {
     font-weight: bold;
     color: #b1bfee; 
+}
+
+.dropdown {
+  position: relative;
+}
+
+#li_dropdown {
+  color:#333;
+}
+
+#li_dropdown:hover {
+  color: rgb(206, 184, 139);
+}
+.dropdown-menu {
+  width: 200px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 </style>
